@@ -1,0 +1,3 @@
+pip install python-telegram-bot --break-system-packages
+
+pip install python-telegram-bot
