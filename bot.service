@@ -1,0 +1,30 @@
+#create bot.service
+#vi /etc/systemd/system/bot.service
+
+[Unit]
+Description=Telegram Bot Service
+After=network.target
+
+
+[Service]
+#file run service, use /bin/bash 
+ExecStart=/bin/bash /root/tele/tele/run
+
+#Directory for service working
+WorkingDirectory=/root/tele/tele
+Restart=always
+User=root
+Group=root
+
+#enviroment
+Environment="PATH=/usr/bin:/usr/local/bin"
+ExecStartPre=/bin/mkdir -p /root/tele/tele/logs
+ExecstartPre=/bin/chwon root:root /root/tele/tele/logs
+
+[Install]
+WantedBy=multi-user.target
+
+#sudo systemctl start bot.service
+#sudo systemctl enable bot.service
+#sudo systemctl status bot.service
+
