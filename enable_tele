@@ -1,0 +1,9 @@
+mkdir -p ~/.config/autostart
+nano ~/.config/autostart/telegram.desktop
+
+
+[Desktop Entry]
+Type=Application
+Exec=telegram-desktop
+Name=Telegram
+Comment=Telegram Desktop Application
